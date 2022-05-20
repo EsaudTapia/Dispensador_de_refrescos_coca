@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace coca
 {
     class ExpenderProcess
-    {
+    { 
         private double precio= 4.5; 
         private double cambio ;
         private double coins ;
