@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 namespace coca
 {
     class ExpenderProcess
-    { 
-        private double precio= 4.5; 
+    {
+        private double precio= 4.5;
         private double cambio ;
         private double coins ;
         private double resultInsert = 0;
-        private int coca= 0;
-        private int fresca = 0;
-        private int manzanita = 0;
-        private int sprite = 0;
-        private int fanta = 0;
+        private int coca= 2;
+        private int fresca = 2;
+        private int manzanita = 2;
+        private int sprite = 2;
+        private int fanta = 2;
 
 
 

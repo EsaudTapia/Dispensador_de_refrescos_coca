@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace coca 
-{ 
+namespace coca
+{
     public partial class Form1 : Form
     {
         ExpenderProcess exp = new ExpenderProcess();
@@ -136,6 +136,7 @@ namespace coca
 
                         button1.Enabled = false;
                         textBox1.Enabled = true;
+                        textBox1.Text = "";
                         button2.Enabled = true;
                         label13.Text = "";
                         label14.Text = "";
@@ -166,6 +167,7 @@ namespace coca
                                 radioButton3.Enabled = true;
                                 radioButton4.Enabled = true;
                                 radioButton5.Enabled = true;
+                                radioButton1.Checked = true;
                                 button1.Enabled = true;
                                 textBox1.Enabled = false;
                                 button2.Enabled = false;
@@ -176,7 +178,7 @@ namespace coca
                         }
                         else
                         {
-                            String mensajeInser = "Solo se aceptan monedas de $0.5  $1  $2  $5  $10";
+                            String mensajeInser = "Solo se aceptan coins de $0.5  $1  $2  $5  $10 ";
                             String captionInser = "¡OoPs!";
                             MessageBox.Show(mensajeInser, captionInser,
                                                    MessageBoxButtons.OK,
@@ -213,7 +215,9 @@ namespace coca
             cant = Microsoft.VisualBasic.Interaction.InputBox("¿De Cuantas cocas es el refill ?",
                                                                    "Refil de cocas", "1");
 
+
             int valor;
+            int cantfill = 0;
 
             if (!(int.TryParse(cant, out valor)))
             {
@@ -223,13 +227,28 @@ namespace coca
                                        MessageBoxButtons.OK,
                                        MessageBoxIcon.Error);
 
-
             }
             else
             {
-                int refil = Convert.ToInt32(cant);
-                exp.Coca += refil;
-                label15.Text = exp.Coca + "";
+                cantfill = Convert.ToInt32(cant);
+
+
+                if (!(int.TryParse(cant, out valor)) || cantfill <= 0)
+                {
+                    String mensajePrecio = "Esa cifra no es valida ingrese numeros y enteros";
+                    String captionPrecio = "¡ Chescos el angiano!";
+                    MessageBox.Show(mensajePrecio, captionPrecio,
+                                           MessageBoxButtons.OK,
+                                           MessageBoxIcon.Error);
+
+
+                }
+                else
+                {
+                    int refil = Convert.ToInt32(cant);
+                    exp.Coca += refil;
+                    label15.Text = exp.Coca + "";
+                }
             }
         }
 
@@ -240,7 +259,8 @@ namespace coca
                                                                           "Cambio de precio", "4.5");
 
             double valor;
-            
+            double precio = 0;
+
             if (!(double.TryParse(cant, out valor)))
             {
                 String mensajePrecio = "Esa cifra no es valida ingrese numeros";
@@ -249,14 +269,44 @@ namespace coca
                                        MessageBoxButtons.OK,
                                        MessageBoxIcon.Error);
 
-                
             }
-            else {             
-                double nprecio= Convert.ToDouble(cant);
-                exp.Precio = nprecio;
-                label8.Text = nprecio + "";
-           }
+            else
+            {
+                precio = Convert.ToDouble(cant);
 
+                if (!(precio % 0.5 == 0))
+                {
+                    String mensajePre = "Esa cifra no es valida, " +
+                        "por favor ingrese valores enteros o  enteros con .50 positivos, " +
+                        " ejemplos: Aceptables =>(.50,1,1.50,2,2.50) " +
+                        "Inaceptables ==> (0.1,0.2,1.25,2.35) ";
+                    String captionPre = "¡ Chescos el angiano!";
+                    MessageBox.Show(mensajePre, captionPre,
+                                           MessageBoxButtons.OK,
+                                           MessageBoxIcon.Information);
+
+                }
+                else
+                {
+
+                    if (!(double.TryParse(cant, out valor)) || precio <= 0)
+                    {
+                        String mensajePrecio = "Esa cifra no es valida ";
+                        String captionPrecio = "¡ Chescos el angiano!";
+                        MessageBox.Show(mensajePrecio, captionPrecio,
+                                               MessageBoxButtons.OK,
+                                               MessageBoxIcon.Error);
+
+
+                    }
+                    else
+                    {
+                        double nprecio = Convert.ToDouble(cant);
+                        exp.Precio = nprecio;
+                        label8.Text = nprecio + "";
+                    }
+                }
+            }
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -486,23 +536,39 @@ namespace coca
             cant = Microsoft.VisualBasic.Interaction.InputBox("¿De Cuantas Fantas es el refill ?",
                                                                    "Refil de Fantas", "1");
 
+
             int valor;
+            int cantfill = 0;
 
             if (!(int.TryParse(cant, out valor)))
             {
-                String mensajePrecio = "Esa cifra no es valida ingrese numeros y enteros";
-                String captionPrecio = "¡ Chescos el angiano!";
-                MessageBox.Show(mensajePrecio, captionPrecio,
-                                       MessageBoxButtons.OK,
-                                       MessageBoxIcon.Error);
-
+               String mensajePrecio = "Esa cifra no es valida ingrese numeros y enteros";
+                    String captionPrecio = "¡ Chescos el angiano!";
+                    MessageBox.Show(mensajePrecio, captionPrecio,
+                                           MessageBoxButtons.OK,
+                                           MessageBoxIcon.Error);
 
             }
             else
             {
-                int refil = Convert.ToInt32(cant);
-                exp.Fanta += refil;
-                label17.Text = exp.Fanta + "";
+                cantfill = Convert.ToInt32(cant);
+                if (!(int.TryParse(cant, out valor)) || cantfill <= 0)
+                {
+
+                    String mensajePrecio = "Esa cifra no es valida ingrese numeros y enteros";
+                    String captionPrecio = "¡ Chescos el angiano!";
+                    MessageBox.Show(mensajePrecio, captionPrecio,
+                                           MessageBoxButtons.OK,
+                                           MessageBoxIcon.Error);
+
+
+                }
+                else
+                {
+                    int refil = Convert.ToInt32(cant);
+                    exp.Fanta += refil;
+                    label17.Text = exp.Fanta + "";
+                }
             }
         }
 
@@ -512,7 +578,9 @@ namespace coca
             cant = Microsoft.VisualBasic.Interaction.InputBox("¿De Cuantos Sprits es el refill ?",
                                                                    "Refil de Sprits", "1");
 
+
             int valor;
+            int cantfill = 0;
 
             if (!(int.TryParse(cant, out valor)))
             {
@@ -522,13 +590,26 @@ namespace coca
                                        MessageBoxButtons.OK,
                                        MessageBoxIcon.Error);
 
-
             }
             else
             {
-                int refil = Convert.ToInt32(cant);
-                exp.Sprite += refil;
-                label18.Text = exp.Sprite + "";
+                cantfill = Convert.ToInt32(cant);
+                if (!(int.TryParse(cant, out valor)) || cantfill <= 0)
+                {
+                    String mensajePrecio = "Esa cifra no es valida ingrese numeros y enteros";
+                    String captionPrecio = "¡ Chescos el angiano!";
+                    MessageBox.Show(mensajePrecio, captionPrecio,
+                                           MessageBoxButtons.OK,
+                                           MessageBoxIcon.Error);
+
+
+                }
+                else
+                {
+                    int refil = Convert.ToInt32(cant);
+                    exp.Sprite += refil;
+                    label18.Text = exp.Sprite + "";
+                }
             }
         }
 
@@ -537,8 +618,8 @@ namespace coca
             String cant = "";
             cant = Microsoft.VisualBasic.Interaction.InputBox("¿De Cuantas Frescas es el refill ?",
                                                                    "Refil de fresca", "1");
-
             int valor;
+            int cantfill = 0;
 
             if (!(int.TryParse(cant, out valor)))
             {
@@ -548,13 +629,26 @@ namespace coca
                                        MessageBoxButtons.OK,
                                        MessageBoxIcon.Error);
 
-
             }
             else
             {
-                int refil = Convert.ToInt32(cant);
-                exp.Fresca += refil;
-                label16.Text = exp.Fresca + "";
+                cantfill = Convert.ToInt32(cant);
+                if (!(int.TryParse(cant, out valor)) || cantfill <= 0)
+                {
+                    String mensajePrecio = "Esa cifra no es valida ingrese numeros y enteros";
+                    String captionPrecio = "¡ Chescos el angiano!";
+                    MessageBox.Show(mensajePrecio, captionPrecio,
+                                           MessageBoxButtons.OK,
+                                           MessageBoxIcon.Error);
+
+
+                }
+                else
+                {
+                    int refil = Convert.ToInt32(cant);
+                    exp.Fresca += refil;
+                    label16.Text = exp.Fresca + "";
+                }
             }
         }
 
@@ -564,7 +658,9 @@ namespace coca
             cant = Microsoft.VisualBasic.Interaction.InputBox("¿De Cuantas Manzanitas es el refill ?",
                                                                    "Refil de manzanitas", "1");
 
+
             int valor;
+            int cantfill = 0;
 
             if (!(int.TryParse(cant, out valor)))
             {
@@ -574,19 +670,44 @@ namespace coca
                                        MessageBoxButtons.OK,
                                        MessageBoxIcon.Error);
 
-
             }
             else
             {
-                int refil = Convert.ToInt32(cant);
-                exp.Manzanita += refil;
-                label19.Text = exp.Manzanita + "";
+                cantfill = Convert.ToInt32(cant);
+
+
+                if (!(int.TryParse(cant, out valor)) || cantfill <= 0)
+                {
+                    String mensajePrecio = "Esa cifra no es valida ingrese numeros y enteros";
+                    String captionPrecio = "¡ Chescos el angiano!";
+                    MessageBox.Show(mensajePrecio, captionPrecio,
+                                           MessageBoxButtons.OK,
+                                           MessageBoxIcon.Error);
+
+
+                }
+                else
+                {
+                    int refil = Convert.ToInt32(cant);
+                    exp.Manzanita += refil;
+                    label19.Text = exp.Manzanita + "";
+                }
             }
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
