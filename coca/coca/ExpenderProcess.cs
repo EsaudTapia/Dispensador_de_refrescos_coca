@@ -38,15 +38,15 @@ namespace coca
 
         public int ValidarExisteneTotal()
         {
-            int res = 0;
+            int res =  0;
             if (this.Coca == 0 && this.Fresca == 0 && this.Fanta == 0 && this.Sprite == 0 && this.Manzanita == 0)
             {
-                res = 0;
+                res =  0;
             }
             else {
-                res = 1;
+                res =  1;
             }
-            return res;
+            return  res;
         }
 
         public  int validarExistencias(int num)
