@@ -28,7 +28,7 @@ namespace coca
         public int Fresca { get => fresca; set => fresca = value; }
         public int Manzanita { get => manzanita; set => manzanita = value; }
         public int Sprite { get => sprite; set => sprite = value; }
-        public int Fanta { get => fanta; set => fanta = value; }
+        public int Fanta { get => fanta; set => fanta = value;}
 
         public void CalculoMonetario()
         {

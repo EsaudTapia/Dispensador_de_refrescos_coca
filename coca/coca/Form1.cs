@@ -277,7 +277,7 @@ namespace coca
                 if (!(precio % 0.5 == 0))
                 {
                     String mensajePre = "Esa cifra no es valida, " +
-                        "por favor ingrese valores enteros o  enteros con .50 positivos, " +
+                        "por favor ingrese valores enteros o enteros con .50 positivos, " +
                         " ejemplos: Aceptables =>(.50,1,1.50,2,2.50) " +
                         "Inaceptables ==> (0.1,0.2,1.25,2.35) ";
                     String captionPre = "¡ Chescos el angiano!";

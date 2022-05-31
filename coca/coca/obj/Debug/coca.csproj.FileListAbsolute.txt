@@ -9,3 +9,14 @@ C:\Users\franc\source\repos\coca\coca\obj\Debug\coca.csproj.CoreCompileInputs.ca
 C:\Users\franc\source\repos\coca\coca\obj\Debug\coca.exe
 C:\Users\franc\source\repos\coca\coca\obj\Debug\coca.pdb
 C:\Users\franc\source\repos\coca\coca\obj\Debug\coca.csproj.ResolveComReference.cache
+C:\Users\franc\Source\Repos\Dispensador_de_refrescos_coca\coca\coca\bin\Debug\coca.exe.config
+C:\Users\franc\Source\Repos\Dispensador_de_refrescos_coca\coca\coca\bin\Debug\coca.exe
+C:\Users\franc\Source\Repos\Dispensador_de_refrescos_coca\coca\coca\bin\Debug\coca.pdb
+C:\Users\franc\Source\Repos\Dispensador_de_refrescos_coca\coca\coca\obj\Debug\coca.csproj.AssemblyReference.cache
+C:\Users\franc\Source\Repos\Dispensador_de_refrescos_coca\coca\coca\obj\Debug\coca.csproj.ResolveComReference.cache
+C:\Users\franc\Source\Repos\Dispensador_de_refrescos_coca\coca\coca\obj\Debug\coca.Form1.resources
+C:\Users\franc\Source\Repos\Dispensador_de_refrescos_coca\coca\coca\obj\Debug\coca.Properties.Resources.resources
+C:\Users\franc\Source\Repos\Dispensador_de_refrescos_coca\coca\coca\obj\Debug\coca.csproj.GenerateResource.cache
+C:\Users\franc\Source\Repos\Dispensador_de_refrescos_coca\coca\coca\obj\Debug\coca.csproj.CoreCompileInputs.cache
+C:\Users\franc\Source\Repos\Dispensador_de_refrescos_coca\coca\coca\obj\Debug\coca.exe
+C:\Users\franc\Source\Repos\Dispensador_de_refrescos_coca\coca\coca\obj\Debug\coca.pdb
